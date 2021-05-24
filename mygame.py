@@ -83,6 +83,7 @@ while done == False:
     screen.blit(zet, (x_z, y_z))
     screen.blit(arrow, (x_a, y_a))
     window.blit(screen, (0,0))
+    
     pygame.display.update()
 
 pygame.quit()
