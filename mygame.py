@@ -1,5 +1,12 @@
 import pygame
 
+
+def intersect(x1, y1, x2, y2, db1, db2):
+    if x1 > x2 - db1 and x1 < x2 + db2 and y1 > y2 - db1 and y1 < y2 + db2:
+        return 1
+    else:
+        return 0
+
 pygame.init()
 
 window = pygame.display.set_mode((400, 400))
@@ -17,6 +24,9 @@ y_z = 0
 
 x_p = 0
 y_p = 360
+
+count = 0
+myfont = pygame.font.SysFont('monospace', 15)
 
 strike = False
 right = True
@@ -47,6 +57,12 @@ while done == False:
             x_a = 1000
             y_a = 1000 
 
+    if intersect(x_a, y_a, x_z, y_z, 20, 40):
+        count += 1
+        strike = False
+        x_a = 1000
+        y_a = 1000 
+
     if right:
         x_z += 1
         if x_z > 400:
@@ -58,7 +74,11 @@ while done == False:
             x_z += 1
             right = True
 
+    
+    string = myfont.render('Очков: ' + str(count), 0, (255, 0, 0))
+
     screen.fill((0, 255, 0))
+    screen.blit(string, (0, 50))
     screen.blit(player, (x_p, y_p))
     screen.blit(zet, (x_z, y_z))
     screen.blit(arrow, (x_a, y_a))
