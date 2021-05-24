@@ -78,12 +78,13 @@ while done == False:
     string = myfont.render('Очков: ' + str(count), 0, (255, 0, 0))
 
     screen.fill((0, 255, 0))
+    
     screen.blit(string, (0, 50))
     screen.blit(player, (x_p, y_p))
     screen.blit(zet, (x_z, y_z))
     screen.blit(arrow, (x_a, y_a))
     window.blit(screen, (0,0))
-    
+
     pygame.display.update()
 
 pygame.quit()
