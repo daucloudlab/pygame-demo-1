@@ -37,13 +37,13 @@ while done == False:
         if e.type == pygame.QUIT:
             done = True
         if e.type == pygame.KEYDOWN and e.key == pygame.K_s:
-            y_p += 1
+            y_p += 5
         if e.type == pygame.KEYDOWN and e.key == pygame.K_w:
-            y_p -= 1
+            y_p -= 5
         if e.type == pygame.KEYDOWN and e.key == pygame.K_a:
-            x_p -= 1
+            x_p -= 5
         if e.type == pygame.KEYDOWN and e.key == pygame.K_d:
-            x_p += 1
+            x_p += 5
         if e.type == pygame.KEYDOWN and e.key == pygame.K_SPACE:
             if strike == False:
                 strike = True
@@ -64,9 +64,9 @@ while done == False:
         y_a = 1000 
 
     if right:
-        x_z += 1
+        x_z += 0.5
         if x_z > 400:
-            x_z -= 1
+            x_z -= 0.5
             right = False
     else:
         x_z -= 1
